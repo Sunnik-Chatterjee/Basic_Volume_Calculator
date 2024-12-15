@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class CubeActivity extends AppCompatActivity {
-    EditText length,breadth,height;
+    EditText length;
     Button cal;
     TextView result;
     @Override
@@ -21,22 +21,16 @@ public class CubeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cube);
-        length=findViewById(R.id.length);
-        breadth=findViewById(R.id.breadth);
-        height=findViewById(R.id.height);
+        length=findViewById(R.id.side);
         cal=findViewById(R.id.calculate);
         result=findViewById(R.id.Volume);
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String len=length.getText().toString();
-                String bred=breadth.getText().toString();
-                String heigh=height.getText().toString();
-                double l,b,h;
-                l=Double.parseDouble(len);
-                b=Double.parseDouble(bred);
-                h=Double.parseDouble(heigh);
-                double volume=l*b*h;
+                String side=length.getText().toString();
+                double a;
+                a=Double.parseDouble(side);
+                double volume=a*a*a;
                 result.setText("Volume: "+volume);
             }
         });

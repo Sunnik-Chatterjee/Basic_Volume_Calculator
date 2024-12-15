@@ -37,7 +37,7 @@ public class Prism extends AppCompatActivity {
                 l=Double.parseDouble(len);
                 b=Double.parseDouble(bread);
                 h=Double.parseDouble(heigh);
-                volume=0.5*l*b*h;
+                volume=l*b*h;
                 vol.setText("Volume: "+volume);
             }
         });
